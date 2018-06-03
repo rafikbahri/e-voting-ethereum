@@ -1,0 +1,18 @@
+.content-page{
+    background-color: white;
+}
+.margin-top{
+     margin-top: 50px;
+}
+.modal-header-success{
+    background-color: #36c6d3;
+    color: white;
+}
+.modal-header-danger{
+    background-color: #ea5460;
+    color: white;
+}
+.modal-body p{
+    overflow: auto;
+}
+    

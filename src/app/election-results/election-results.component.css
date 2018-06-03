@@ -1,0 +1,14 @@
+.panel-heading{
+    color: white;
+    background-color: #36c6d3;
+    border-color: #abe7ed;
+}
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+#pie{
+    width: 200px;
+    height: 200px;
+}

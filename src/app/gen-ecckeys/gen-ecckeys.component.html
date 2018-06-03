@@ -1,0 +1,30 @@
+<div class="page-content-wrapper">
+  <div class="page-content">
+    <div class="portlet-body">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Generate ECC key pair</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <h4>Public Key</h4>
+              <textarea name="publickey" id="publickey" cols="65" rows="15" [value]="keypair ? keypair.publickey:''"></textarea>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <h4>Private Key</h4>
+              <textarea name="privatekey" id="privatekey" cols="65" rows="15" [value]="keypair ? keypair.privatekey:''"></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="text-center">
+              <button type="button" class="btn green" (click)="genkeys()">Generate key pair</button>
+              <button type="button" class="btn grey-salsa" (click)="sendPubkey()">Send pubkey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="page-content-wrapper">
+  <div class="page-content">
+    <div class="portlet-body">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Candidates List</h3>
+        </div>
+        <div class="panel-body">
+          <div class="table-scrollable">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th> ID </th>
+                  <th> Name </th>
+                  <th> Last Name </th>
+                  <th> Description </th>
+                  <th> Choice </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let candidate of election.candidates">
+                  <td>{{candidate.id}}</td>
+                  <td> {{candidate.name}} </td>
+                  <td> {{candidate.lastName}} </td>
+                  <td> {{candidate.description}} </td>
+                  <td>
+                    <input name="choice" ng-control="choice" type="radio" value="{{candidate.name+' '+candidate.lastName}}" [(ngModel)]="choice">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <h4>Private Key</h4>
+              <textarea name="privatekey" id="privatekey" cols="60" rows="15" [(ngModel)]="privatekey">
+              </textarea>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <h4>LRS</h4>
+              <textarea name="lrs" id="lrs" cols="60" rows="15">{{ result | json}}</textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-center">
+              <button type="button" class="btn green" (click)="signVote()">Sign vote</button>
+              <button type="button" class="btn primary" (click)="vote()">Vote</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="alert alert-info" *ngIf="loadingMessage">
+              <img src="../../assets/global/img/loading-spinner-grey.gif" alt="" class="loading">
+              <span>{{loadingMessage}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

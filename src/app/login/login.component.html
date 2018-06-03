@@ -1,0 +1,85 @@
+<body class=" login">
+  <!-- BEGIN LOGO -->
+  <div class="logo">
+    <a>
+        <img src="../assets/pages/img/logo-big-white.png" style="height: 17px;" alt="" />
+    </a>
+  </div>
+  <!-- END LOGO -->
+  <!-- BEGIN LOGIN -->
+  <div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <form class="login-form" [formGroup]="myForm" (ngSubmit)="login()">
+      <div class="form-title">
+        <span class="form-title">Welcome.</span>
+        <span class="form-subtitle">Please login.</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="!myForm.controls.email.valid && (loginAttempt || myForm.controls.email.dirty)">
+        <button class="close" data-close="alert"></button>
+        <span> email not valid </span>
+      </div>
+      <div class="alert alert-danger" *ngIf="!myForm.controls.password.valid && (myForm.controls.password.dirty || loginAttempt)">
+        <button class="close" data-close="alert"></button>
+        <span> password required </span>
+      </div>
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        <button class="close" data-close="alert"></button>
+        <span>{{errorMessage}}</span>
+      </div>
+      <div class="form-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9">Email</label>
+        <input class="form-control form-control-solid placeholder-no-fix" formControlName="email" type="email" placeholder="email" name="email"/>
+       </div>
+      <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        <input class="form-control form-control-solid placeholder-no-fix" formControlName="password" type="password" autocomplete="off" placeholder="Password"
+          name="password" /> </div>
+      <div class="form-actions">
+        <button type="submit" class="btn red btn-block uppercase">Login</button>
+      </div>
+      <div class="form-actions">
+        <div class="pull-left">
+          <label class="rememberme check">
+                            <input type="checkbox" name="remember" value="1" />Remember me </label>
+        </div>
+        <div class="pull-right forget-password-block">
+          <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+        </div>
+      </div>
+      <div class="login-options">
+        <h4 class="pull-left">Or login with</h4>
+        <ul class="social-icons pull-right">
+          <li>
+            <a class="social-icon-color facebook" data-original-title="facebook" href="javascript:;"></a>
+          </li>
+          <li>
+            <a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
+          </li>
+          <li>
+            <a class="social-icon-color googleplus" data-original-title="Goole Plus" href="javascript:;"></a>
+          </li>
+          <li>
+            <a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
+          </li>
+        </ul>
+      </div>
+    </form>
+    <!-- END LOGIN FORM -->
+    <!-- BEGIN FORGOT PASSWORD FORM -->
+    <!--<form class="forget-form">
+      <div class="form-title">
+        <span class="form-title">Forget Password ?</span>
+        <span class="form-subtitle">Enter your e-mail to reset it.</span>
+      </div>
+      <div class="form-group">
+        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email" />        </div>
+      <div class="form-actions">
+        <button type="button" id="back-btn" class="btn btn-default">Back</button>
+        <button class="btn btn-primary uppercase pull-right">Submit</button>
+      </div>
+    </form>-->
+    <!-- END FORGOT PASSWORD FORM -->
+  </div>
+  <!-- END LOGIN -->
+</body>

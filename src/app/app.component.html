@@ -1,0 +1,23 @@
+<app-navbar *ngIf="isloggedIn"></app-navbar>
+<app-sidebar *ngIf="isloggedIn"></app-sidebar>
+
+<div class="content-page" [ngClass]="isloggedIn?'margin-top':''">
+    <router-outlet></router-outlet>
+</div>
+
+<div #myModal class="modal fade" id="basic" tabindex="-1" role="basic" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" [ngClass]="modalContent.state == 'Error' ? 'modal-header-danger' : 'modal-header-success'">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">{{modalContent.state}}</h4>
+            </div>
+            <div class="modal-body"><p>{{modalContent.msg}}</p></div>
+            <div class="modal-footer">
+                <button type="button" class="btn" [ngClass]="modalContent.state == 'Error' ? 'btn-danger' : 'green'" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer *ngIf="isloggedIn"></app-footer>

@@ -1,0 +1,8 @@
+.panel-heading{
+    color: white;
+    background-color: #36c6d3 !important;
+    border-color: #abe7ed;
+}
+.alert{
+    padding: 10px !important;
+}
